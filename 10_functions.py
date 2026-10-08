@@ -26,3 +26,15 @@ def myFun2(x):
 a = 10
 myFun2(a)
 print(a)
+
+# *args and **kwargs --------------
+# *args → collects all positional arguments into a tuple.
+# **kwargs → collects all keyword arguments into a dictionary
+
+
+def fun(*args, **kwargs):
+    print(args)
+    print(kwargs)
+
+
+fun(33, 232, a=1, b=2)
