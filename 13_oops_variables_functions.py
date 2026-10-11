@@ -7,6 +7,11 @@
 # - Class Variables : define outside the constuctor function
 # - Instance Variables : define inside the constuctor function
 
+# Method types
+# @property - Use a method like an attribute
+# @staticmethod - A method that doesn't need self or cls
+# @classmethod - A method that receives the class itself as the first argument, cls
+
 
 class Student:
     std_no = 0  # class/Static variable
@@ -26,6 +31,10 @@ class Student:
         print("Bal     : ", self.__bal)
         print("Student No : ", self.std_no)
 
+    @property
+    def student(self):
+        return self.name
+
     @staticmethod
     def add_static(a, b):
         print("Static method ----------")
@@ -42,6 +51,7 @@ s2 = Student("Vicky", 22, 2000)
 s3 = Student("Jazz", 24, 1000)
 
 # Access Instance Variables
+print(s1.student)
 print(s1.name)
 print(s1._age)
 # print(s1.__bal)  # AttributeError
