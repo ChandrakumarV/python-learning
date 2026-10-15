@@ -1,5 +1,14 @@
-from sqlalchemy import create_engine
+import asyncio
 
-engine = create_engine("sqlite:///app.db")
 
-print("Database connected!")
+async def task(name):
+    print(f"{name} started")
+    await asyncio.sleep(2)
+    print(f"{name} completed")
+
+
+async def main():
+    await asyncio.gather(task("A"), task("B"), task("C"))
+
+
+asyncio.run(main())
